@@ -23,6 +23,7 @@ const App = () => {
   return (
     <div className="max-w-7xl mx-auto p-4">
       <div className="bg-white shadow-md rounded-lg p-6 mb-6">
+        <h1 className="text-4xl font-bold mb-2 text-center text-blue-600">🏆KickOffNow🏆</h1>
         <h1 className="text-4xl font-bold mb-2 text-center text-blue-600">Major Leagues of 2022 Season</h1>
         <h2 className="text-xl text-center text-gray-600 mb-4">Explore all your football/soccer league matches around the world</h2>
       </div>
