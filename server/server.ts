@@ -1,9 +1,9 @@
 import express from 'express';
-import venuesRouter from './routes/venuesRoutes';
+import leaguesRouter from './routes/leaguesRoutes';
 
 const app = express();
 
-app.use('/api', venuesRouter);
+app.use('/api', leaguesRouter);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
