@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
-import { getAllLeaguesDetails, getFixturesByLeagueAndSeason } from '../services/api-football';
+import { pool } from '../config/database';
 
-export const getLeaguesController = async (req: Request, res: Response): Promise<void> => {
+export const getLeaguesController = async (_req: Request, res: Response): Promise<void> => {
     try {
-        const leagues = await getAllLeaguesDetails();
-        res.json(leagues);
+        const result = await pool.query('SELECT * FROM leagues');
+        res.json(result.rows);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
@@ -12,10 +12,9 @@ export const getLeaguesController = async (req: Request, res: Response): Promise
 
 export const getFixturesForLeague = async (req: Request, res: Response): Promise<void> => {
     const { leagueId } = req.params;
-    const season = 2022; // Hardcoded season for now
     try {
-        const fixtures = await getFixturesByLeagueAndSeason(parseInt(leagueId, 10), season);
-        res.json(fixtures.slice(0, 6)); // Get recent 6 fixtures
+        const result = await pool.query('SELECT * FROM fixtures WHERE league_id = $1 ORDER BY date ASC LIMIT 6', [leagueId]);
+        res.json(result.rows);
     } catch (error) {
         res.status(500).json({ error: (error as Error).message });
     }
