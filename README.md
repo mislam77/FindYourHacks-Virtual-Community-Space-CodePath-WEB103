@@ -2,9 +2,9 @@
 
 Submitted by: **Md Wasiul Islam**
 
-About this web app: **KickOffNow is a web application that allows users to explore major football/soccer leagues and their fixtures for the 2022 season. Users can view detailed information about various leagues and the fixtures.
+About this web app: **KickOffNow is a web application that allows users to explore major football/soccer leagues and their fixtures for the 2022 season. Users can view detailed information about various leagues and the fixtures.**
 
-Tech Stack
+**Tech Stack**
 
 Frontend: React, TypeScript, Tailwind CSS
 
@@ -14,7 +14,7 @@ Database: PostgreSQL via Railway
 
 API: API-Football for fetching league and fixture data
 
-Tools: Axios for HTTP requests, ts-node for running TypeScript in Node.js**
+Tools: Axios for HTTP requests, ts-node for running TypeScript in Node.js
 
 Time spent: **8** hours
 
